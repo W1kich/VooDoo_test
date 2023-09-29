@@ -1,5 +1,4 @@
 import getAllData from '../service/services';
-import menu from './menu';
 import shopingCard from './shoppingCart';
 import countAll from './countAll';
 
@@ -13,7 +12,7 @@ const cards = async () =>{
 		<div class="card flex flex-col gap-3 w-[300px] h-[448px] ">
 			<div class="relative hover:cursor-pointer">
 				<div class="w-[300px] h-[300px] p-[12px] border-solid border-black border-2 ">
-					<img id="${data.id}" class="imgBox"src="${data.img}" alt="">
+					<img class="imgBox"src="${data.img}" alt=">${data.title}">
 				</div>
 				<div class=" rounded p-[8px] bg-black text-mainColor text-xs absolute top-[12px] left-[12px]">Used</div>
 			</div>
@@ -151,9 +150,7 @@ const cards = async () =>{
 				}
 		}
 		countAll(); 
-});
-
-
+	});
 
 }
 
