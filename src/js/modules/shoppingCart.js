@@ -24,7 +24,7 @@ const shopingCard = async (id) => {
 								<div class="plus px-[3px] min-h-[20px] min-w-[20px] hover:bg-gray-700 hover:cursor-pointer">+</div>
 						</div>
 				</div>
-				<div class="delete-bin"><img class="delete-bin" src="/src/img/delete-bin-6-line.svg" alt=""></div>
+				<div class="delete-bin"><img class="delete-bin" src="src/img/delete-bin-6-line.svg" alt=""></div>
 		`;
 
 		parent.appendChild(listItem);
