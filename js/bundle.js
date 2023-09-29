@@ -155,35 +155,20 @@ const cards = async () =>{
 					});
 			}
 	});
-	
 
-	
-	
 
 	window.addEventListener("click", async (e) => {
-		if (e.target.classList.contains('imgBox')) {
-			const windowWidth = window.innerWidth;
-
-			if (windowWidth < 768) {
-					return false;
-			}else{
-				(0,_menu__WEBPACK_IMPORTED_MODULE_1__["default"])(+e.target.id);
-					window.scrollTo({
-							top: 0,
-							behavior: 'smooth'
-					});
-			}
-		} else if (e.target.classList.contains('button')) {
+	if (e.target.classList.contains('button')) {
 				const parent = document.querySelector("#shopping__list");
 				const itemInCard = parent.querySelector(`#A${e.target.id}`);
 				if (itemInCard) {
 						const cardCounter = itemInCard.querySelector(".countNumber");
 						cardCounter.innerHTML++;
 				} else {
-						await (0,_shoppingCart__WEBPACK_IMPORTED_MODULE_2__["default"])(+e.target.id); // Очікуємо, доки shopingCard завершить роботу
+						await (0,_shoppingCart__WEBPACK_IMPORTED_MODULE_2__["default"])(+e.target.id); 
 				}
 		}
-		(0,_countAll__WEBPACK_IMPORTED_MODULE_3__["default"])(); // Викликаємо countAll() після всіх змін
+		(0,_countAll__WEBPACK_IMPORTED_MODULE_3__["default"])(); 
 });
 
 
@@ -292,54 +277,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _service_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../service/services */ "./src/js/service/services.js");
 
-const menu = async (id) =>{
+const menu = () =>{
 	const menuButton = document.querySelector(".menu__button");
 	const parent = document.querySelector(".products");
 	const menu = document.querySelector(".menu");
-	const itemList = await (0,_service_services__WEBPACK_IMPORTED_MODULE_0__["default"])();
-	let text = '';
-
-	let newArr = itemList.filter((item) =>{
-		return item.id === id;
-	})
 	
-	newArr[0].option.forEach(item =>{
-		text += "<br>" + item ;
-	})
-
-	menu.innerHTML = `
-	<div id="${newArr[0].id}" class="flex flex-col gap-3 h-[448px]  w-[300px]">
-				<div class="relative ">
-					<div class="w-[300px] h-[300px] p-[12px] border-solid border-mainColor border-2">
-						<img src="${newArr[0].img}" alt="">
-					</div>
-					<div class=" rounded p-[8px] bg-mainColor text-black text-xs absolute top-[12px] left-[12px]">Used</div>
-				</div>
-				<div class="flex flex-row justify-between text-mainColor">
-					<div class="flex flex-col items-start">
-						<div class="">${newArr[0].title}</div>
-						<div class="">${newArr[0].price === "Sold out" ? "Sold out" : newArr[0].price + "KR."}</div>
-					</div>
-					<div class="flex flex-col items-end">
-						<div class="">Condition</div>
-						<div class="">Slightly used</div>
-					</div>
-				</div>
-				<div id="${newArr[0].id}" class="bg-mainColor button text-black p-[16px] text-sm rounded text-center hover:cursor-pointer">
-					ADD TO CART
-				</div>
-			</div> 
-			<div class="flex flex-col text-mainColor">
-				<div class="">Option:
-					${text}
-				</div>
-				<div class="">Product type: ${newArr[0].product_type ? newArr[0].product_type : "not found"}</div>
-				<div class="">Vendor: ${newArr[0].vendor}</div>
-			</div>
-		</div>
-		`;
+	
 
 		menu.classList.remove("hidden");
 		menu.classList.remove("left-[-100%]");
@@ -349,15 +293,16 @@ const menu = async (id) =>{
 		
 		parent.addEventListener('click', function handleClick(e) {
 			if (e.target.classList.contains('rotate-180') && e.target.classList.contains('menu__button')) {
-				console.log(e.target.classList.contains('rotate-180') && e.target.classList.contains('menu__button'));
-		
 				menu.classList.add("hidden");
 				menu.classList.remove("left-0");
 				menu.classList.add("left-[-100%]");
 				menuButton.classList.remove("rotate-180");
-		
-				parent.removeEventListener('click', handleClick); 
-			} 
+			} else if(!e.target.classList.contains('rotate-180') && e.target.classList.contains('menu__button')){
+				menu.classList.remove("hidden");
+				menu.classList.add("left-0");
+				menu.classList.remove("left-[-100%]");
+				menuButton.classList.add("rotate-180");
+			}
 		});
 		
 }
@@ -548,6 +493,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_counter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/counter */ "./src/js/modules/counter.js");
 /* harmony import */ var _modules_showShop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/showShop */ "./src/js/modules/showShop.js");
 /* harmony import */ var _modules_countAll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/countAll */ "./src/js/modules/countAll.js");
+/* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/menu */ "./src/js/modules/menu.js");
+
 
 
 
@@ -558,6 +505,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	(0,_modules_counter__WEBPACK_IMPORTED_MODULE_1__["default"])();
 	(0,_modules_showShop__WEBPACK_IMPORTED_MODULE_2__["default"])();
 	(0,_modules_countAll__WEBPACK_IMPORTED_MODULE_3__["default"])();
+	(0,_modules_menu__WEBPACK_IMPORTED_MODULE_4__["default"])();
 });
 })();
 

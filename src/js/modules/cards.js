@@ -137,35 +137,20 @@ const cards = async () =>{
 					});
 			}
 	});
-	
 
-	
-	
 
 	window.addEventListener("click", async (e) => {
-		if (e.target.classList.contains('imgBox')) {
-			const windowWidth = window.innerWidth;
-
-			if (windowWidth < 768) {
-					return false;
-			}else{
-				menu(+e.target.id);
-					window.scrollTo({
-							top: 0,
-							behavior: 'smooth'
-					});
-			}
-		} else if (e.target.classList.contains('button')) {
+	if (e.target.classList.contains('button')) {
 				const parent = document.querySelector("#shopping__list");
 				const itemInCard = parent.querySelector(`#A${e.target.id}`);
 				if (itemInCard) {
 						const cardCounter = itemInCard.querySelector(".countNumber");
 						cardCounter.innerHTML++;
 				} else {
-						await shopingCard(+e.target.id); // Очікуємо, доки shopingCard завершить роботу
+						await shopingCard(+e.target.id); 
 				}
 		}
-		countAll(); // Викликаємо countAll() після всіх змін
+		countAll(); 
 });
 
 
