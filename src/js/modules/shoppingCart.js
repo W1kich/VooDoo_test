@@ -17,7 +17,7 @@ const shopingCard = async (id) => {
 				<div class="rounded border-gray-500 border-2 w-[74px] h-[74px]"><img src="${newArr[0].img}" alt=""></div>
 				<div class=" text-mainColor text-sm flex flex-col gap-[12px] w-[231px]">
 						<div class="">${newArr[0].title}</div>
-						<div class="shopping__list__item__price">${newArr[0].price}</div>
+						<div class="shopping__list__item__price">${newArr[0].price === "Sold out" ? "Sold out" : newArr[0].price + "KR."}</div>
 						<div class="counter flex flex-row items-end gap-[6px] text-center">
 								<div class="minus px-[4px] pb-px min-h-[20px] min-w-[20px] hover:bg-gray-700 hover:cursor-pointer "> -</div>
 								<div class="countNumber px-[3px] min-h-[20px] min-w-[20px]">1</div>

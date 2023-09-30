@@ -4,10 +4,20 @@ const countAll = () =>{
 	const totalPriceEl = document.querySelector('.total');
 	let priceTotal = 0;
 
-	
+	function extractNumbersFromString(inputString) {
+		const regex = /\d+\.\d+/g;
+		const matches = inputString.match(regex);
+
+		if (matches) {
+			return +matches[0];
+		} else {
+			return 0;
+		}
+	}
+
 	priceElements.forEach(function (item) {
 			const amountEl = item.closest('.shopping__list__item').querySelector('.countNumber');
-		priceTotal += parseFloat(item.innerText) * parseFloat(amountEl.innerText);
+		priceTotal += parseFloat(extractNumbersFromString(item.innerText)) * parseFloat(amountEl.innerText);
 	});
 
 
