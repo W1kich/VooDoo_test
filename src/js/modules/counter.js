@@ -28,9 +28,7 @@ const counter = () =>{
 		countAll();
 	}
 
-// Проверяем клик на + или - внутри коризины
 	if (e.target.classList.contains("plus") || e.target.classList.contains("minus") && e.target.closest('.shoppingCard')) {
-		// Пересчет общей стоимости товаров в корзине
 		countAll();
 	}
 	
