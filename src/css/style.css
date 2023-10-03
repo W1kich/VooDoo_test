@@ -550,8 +550,8 @@ video {
   left: 0px;
 }
 
-.left-\[-100\%\] {
-  left: -100%;
+.left-\[-9999px\] {
+  left: -9999px;
 }
 
 .left-\[12px\] {
@@ -574,12 +574,16 @@ video {
   top: 12px;
 }
 
-.left-\[-9999px\] {
-  left: -9999px;
-}
-
 .top-\[-9999px\] {
   top: -9999px;
+}
+
+.top-\[-100\%\] {
+  top: -100%;
+}
+
+.left-\[0\] {
+  left: 0;
 }
 
 .z-10 {
@@ -610,6 +614,10 @@ video {
   display: none;
 }
 
+.h-\[0\] {
+  height: 0;
+}
+
 .h-\[300px\] {
   height: 300px;
 }
@@ -628,10 +636,6 @@ video {
 
 .h-full {
   height: 100%;
-}
-
-.h-\[0\] {
-  height: 0;
 }
 
 .max-h-\[38px\] {
@@ -684,6 +688,11 @@ video {
 
 .flex-0 {
   flex: 0 0 39px;
+}
+
+.translate-y-full {
+  --tw-translate-y: 100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .rotate-180 {
@@ -783,6 +792,10 @@ video {
 
 .gap-y-\[48px\] {
   row-gap: 48px;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .rounded {
@@ -971,30 +984,10 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-
-.delay-700 {
-  transition-delay: 700ms;
-}
-
-.delay-300 {
-  transition-delay: 300ms;
-}
-
-.delay-100 {
-  transition-delay: 100ms;
 }
 
 .delay-150 {
