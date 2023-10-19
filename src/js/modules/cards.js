@@ -2,8 +2,7 @@ import getAllData from '../service/services';
 import shopingCard from './shoppingCart';
 import countAll from './countAll';
 
-const cards = async () =>{	
-	
+const cards = async () =>{
 	const MenuCard = (data ,parentClass = ".cards") =>{
 		const element = document.createElement('div');
 		const parent = document.querySelector(parentClass);
@@ -26,7 +25,7 @@ const cards = async () =>{
 					<div class="">Slightly used</div>
 				</div>
 			</div>
-			<div id="${data.id}" class="bg-black button text-mainColor p-[16px] text-sm rounded text-center hover:cursor-pointer hover:bg-slate-600">
+			<div id="${data.id}" class="bg-black button text-mainColor p-[16px] text-sm rounded text-center cursor-pointer transition-all ease-in-out hover:bg-slate-600">
 				ADD TO CART
 			</div>
 		</div> `;

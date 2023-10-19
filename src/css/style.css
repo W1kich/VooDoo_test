@@ -546,12 +546,8 @@ video {
   position: relative;
 }
 
-.left-0 {
-  left: 0px;
-}
-
-.left-\[-9999px\] {
-  left: -9999px;
+.left-\[0\] {
+  left: 0;
 }
 
 .left-\[12px\] {
@@ -572,18 +568,6 @@ video {
 
 .top-\[12px\] {
   top: 12px;
-}
-
-.top-\[-9999px\] {
-  top: -9999px;
-}
-
-.top-\[-100\%\] {
-  top: -100%;
-}
-
-.left-\[0\] {
-  left: 0;
 }
 
 .z-10 {
@@ -690,14 +674,18 @@ video {
   flex: 0 0 39px;
 }
 
-.translate-y-full {
-  --tw-translate-y: 100%;
+.translate-y-0 {
+  --tw-translate-y: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .rotate-180 {
   --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .flex-row {
@@ -792,10 +780,6 @@ video {
 
 .gap-y-\[48px\] {
   row-gap: 48px;
-}
-
-.overflow-hidden {
-  overflow: hidden;
 }
 
 .rounded {
@@ -1103,5 +1087,3 @@ video {
     flex-direction: row;
   }
 }
-
-

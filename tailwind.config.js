@@ -5,6 +5,9 @@ module.exports = {
 		,"./src/**/*.{html,js}"],
   theme: {
     extend: {
+			transitionProperty: {
+        'height': 'height',
+      },
 			colors:{
 				mainColor: '#FCF7E6'
 			},
